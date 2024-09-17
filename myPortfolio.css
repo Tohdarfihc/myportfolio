@@ -98,7 +98,7 @@ main {
     font-size: xx-large;
     font-weight: bolder;
     background: linear-gradient(to right, #a8e063, #56ab2f);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     width: 20ch;
     overflow: hidden;
@@ -125,7 +125,7 @@ main {
 }
 
 #text::before {
-    content: "interactive product";
+    content: "Responsive product";
     animation: changeText 20s infinite;
 }
 
