@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Change Header</title>
+    <style>
+        /* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: transparent;
+    transition: background-color 0.7s ease; /* Smooth transition */
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Add initial content styling */
+section {
+    padding: 100px 20px; /* Adjust for fixed header */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <!-- Navigation or Logo goes here -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <h1>Welcome to My Website</h1>
+    <p>Scroll down to see the header change color.</p>
+    <!-- Add enough content here to make the page scrollable -->
+    <div style="height: 1500px;"></div>
+</section>
+
+<script>
+    // script.js
+window.onscroll = function() {
+    const header = document.getElementById('header');
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 100) { // Change the threshold as needed
+        header.style.backgroundColor = 'black'; // New color when scrolled
+    } else {
+        header.style.backgroundColor = 'transparent'; // Reset to transparent
+    }
+};
+</script>
+</body>
+</html>
